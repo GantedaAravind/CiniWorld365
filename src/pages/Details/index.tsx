@@ -9,6 +9,7 @@ import { toast } from "react-hot-toast";
 
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import axios from "axios";
+import axiosInstance from "../../config/axiosInstance";
 
 function Details() {
   const params = useParams();
@@ -16,18 +17,8 @@ function Details() {
 
   const fetchDetails = async () => {
     try {
-      const options = {
-        // method: "GET",
-        headers: {
-          // accept: "application/json",
-          Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNmQyMjg5YjY2ZDg0ZWQzNTkwZGZmZWI4MDNiMTk3OSIsIm5iZiI6MTcyNTg5OTk0NC4yMTEzNDMsInN1YiI6IjY2ZGQ5NWJjMDE2NzllNDJjMDlhOWQzZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.q9d5TeT0LSD-0C00M2jEfZY4visi4_sC7DIGd3PPsWY",
-        },
-      };
-      const res = await axios.get(
-        `https://api.themoviedb.org/3/movie/${params.id}?language=en-US`,
-        options
-      );
+      
+      const res = await axiosInstance.get(`/${params.id}?language=en-US`);
       const data = res.data;
       //   console.log(data);
       setDetails(data);

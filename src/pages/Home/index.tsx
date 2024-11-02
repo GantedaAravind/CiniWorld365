@@ -5,6 +5,7 @@ import MovieList from "../../components/Home/MovieList";
 import { toast } from "react-hot-toast";
 import { LuLoader2 } from "react-icons/lu";
 import axios from "axios";
+import axiosInstance from "../../config/axiosInstance";
 // import Scroll from "../../utils/Scroll";
 
 function Home() {
@@ -15,21 +16,8 @@ function Home() {
   const fetchMovies = async (page: number) => {
     setLoading(true);
     try {
-      const options = {
-        // method: "GET",
-        headers: {
-          // accept: "application/json",
-          Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNmQyMjg5YjY2ZDg0ZWQzNTkwZGZmZWI4MDNiMTk3OSIsIm5iZiI6MTcyNTc5ODI2Ny41NTI0LCJzdWIiOiI2NmRkOTViYzAxNjc5ZTQyYzA5YTlkM2YiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.Osc2pyAZCKX0bOx2uCi8x4weUMlv-_ZxffSeUDbRGg0",
-        },
-      };
-
-      const responce = await axios.get(
-        `https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=${page}`,
-        options
-      );
+      const responce = await axiosInstance.get(`/top_rated?language=en-US&page=${page}`);
       const data = responce.data;
-      // console.log(data);
       setMovies((prev) => [...prev, ...data.results]);
     } catch (err) {
       console.log(err);

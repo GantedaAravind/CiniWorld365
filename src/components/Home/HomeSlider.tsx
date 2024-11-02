@@ -6,6 +6,7 @@ import HomeCarouselList from "./HomeCarouselList";
 import HomeCarouselSkeleton from "../Skeleton/HomeCarouselSkeleton";
 import { toast } from "react-hot-toast";
 import axios from "axios";
+import axiosInstance from "../../config/axiosInstance";
 const HomeSlider = () => {
   const [carouselMovies, setCarouselMovies] = useState<CarouselMovieType[]>([]);
   const [selected, setSelected] = useState(0);
@@ -13,16 +14,8 @@ const HomeSlider = () => {
 
   const fetchUpcoming = async () => {
     try {
-      const options = {
-        headers: {
-          Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNmQyMjg5YjY2ZDg0ZWQzNTkwZGZmZWI4MDNiMTk3OSIsIm5iZiI6MTcyNTc5ODI2Ny41NTI0LCJzdWIiOiI2NmRkOTViYzAxNjc5ZTQyYzA5YTlkM2YiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.Osc2pyAZCKX0bOx2uCi8x4weUMlv-_ZxffSeUDbRGg0",
-        },
-      };
-
-      const response = await axios.get(
-        "https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1",
-        options
+      const response = await axiosInstance.get(
+        "/upcoming?language=en-US&page=1"
       );
       setCarouselMovies(response.data.results);
     } catch (err) {

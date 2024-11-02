@@ -1,14 +1,15 @@
-
 # 🎥 CiniWorld365
 
 Welcome to **CiniWorld365**, an engaging and interactive movie web application! This project provides a seamless user experience for exploring movies with a visually appealing interface, fetching data from The Movie Database (TMDB) API, and offering a variety of features for movie enthusiasts.
 
 ## 🌟 Live Demo
+
 Explore the project here: [CiniWorld365](https://cineworld365.web.app/)
 
 ---
 
 ## 📖 Table of Contents
+
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Setup and Installation](#setup-and-installation)
@@ -21,6 +22,7 @@ Explore the project here: [CiniWorld365](https://cineworld365.web.app/)
 ---
 
 ## 🎬 Features
+
 - **Searchable Movie Database**: Users can search for movies by name and get detailed information.
 - **Dynamic Routing**: Smooth transitions between different views using React Router.
 - **Visually Appealing Layout**: Tailwind CSS and Bootstrap were used for modern, responsive, and attractive UI.
@@ -32,6 +34,7 @@ Explore the project here: [CiniWorld365](https://cineworld365.web.app/)
 ---
 
 ## 🛠️ Technologies Used
+
 - **Frontend**: React.js, JavaScript, Tailwind CSS, Bootstrap, Axios
 - **API**: The Movie Database (TMDB) API
 - **Routing**: React Router
@@ -39,35 +42,45 @@ Explore the project here: [CiniWorld365](https://cineworld365.web.app/)
 ---
 
 ## 🚀 Setup and Installation
+
 1. **Clone the repository:**
+
    ```bash
    git clone https://github.com/GantedaAravind/CiniWorld365.git
    cd CiniWorld365
    ```
 
 2. **Install dependencies:**
+
    ```bash
    npm install
    ```
 
 3. **Create a `.env` file in the root directory** and add your TMDB API key:
+
    ```bash
-   REACT_APP_TMDB_API_KEY=your_api_key_here
+   VITE_AUTHORIZATION=your-authorization-key
+   VITE_BASE_URL=your-movie-api-base-url
    ```
 
+````
+
 4. **Run the application:**
+
    ```bash
    npm start
-   ```
+````
 
 5. The app will be accessible at `http://localhost:3000`.
 
 ---
 
 ## 🌐 API Integration
+
 CiniWorld365 uses the **TMDB API** to fetch movie data. Make sure to sign up at [The Movie Database](https://www.themoviedb.org/) and get your API key to use in this project.
 
 **API Operations:**
+
 - Fetching popular, trending, and top-rated movies.
 - Retrieving movie details, including descriptions, trailers, and cast.
 - Searching for movies by keyword.
@@ -75,6 +88,7 @@ CiniWorld365 uses the **TMDB API** to fetch movie data. Make sure to sign up at 
 ---
 
 ## 📂 Project Structure
+
 ```
 CiniWorld365/
 │
@@ -105,7 +119,9 @@ CiniWorld365/
 ---
 
 ## 📚 Learnings
+
 Working on CiniWorld365 offered significant insights and growth:
+
 - **Mastered React components**: Efficient use of props, hooks (`useState`, `useEffect`), and lifecycle management.
 - **Effective state management**: Prop drilling and lifting state up for optimal performance.
 - **API integration and asynchronous handling**: Used Axios for seamless data fetching.
@@ -115,14 +131,15 @@ Working on CiniWorld365 offered significant insights and growth:
 ---
 
 ## 🤝 Contributing
+
 Contributions are welcome! Feel free to submit a pull request or open an issue for suggestions and improvements.
 
 ---
 
-
 ---
 
 ### 🙌 Connect and Explore
-We'd love to hear your thoughts on CiniWorld365! Feel free to connect, share feedback, or contribute to the project. 
+
+We'd love to hear your thoughts on CiniWorld365! Feel free to connect, share feedback, or contribute to the project.
 
 Enjoy exploring the world of movies!

@@ -4,6 +4,7 @@ import { CarouselMovieType } from "../../utils/constants";
 import CarouselMiniCard from "../Home/CarouselMiniCard";
 import { IoClose } from "react-icons/io5";
 import axios from "axios";
+import axiosInstance from "../../config/axiosInstance";
 const Navbar = () => {
   const [search, setSearch] = useState<string>("");
   const [searchList, setSearchList] = useState<CarouselMovieType[]>([]);
@@ -14,19 +15,8 @@ const Navbar = () => {
 
   const featchSearch = async () => {
     try {
-      const options = {
-        // method: "GET",
-        headers: {
-          // accept: "application/json",
-          Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNmQyMjg5YjY2ZDg0ZWQzNTkwZGZmZWI4MDNiMTk3OSIsIm5iZiI6MTcyNTg5OTk0NC4yMTEzNDMsInN1YiI6IjY2ZGQ5NWJjMDE2NzllNDJjMDlhOWQzZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.q9d5TeT0LSD-0C00M2jEfZY4visi4_sC7DIGd3PPsWY",
-        },
-      };
-
-      const response = await axios.get(
-        `https://api.themoviedb.org/3/search/movie?query=${search}&include_adult=false&language=en-US&page=1`,
-        options
-      );
+      
+      const response = await axiosInstance.get(`?query=${search}&include_adult=false&language=en-US&page=1`);
       const data = response.data;
       setSearchList(data.results);
     } catch (err) {

@@ -23,7 +23,7 @@ const HomeCarousel = ({ carouselMovies }: HomeCarouselProps) => {
               <div className="relative h-full">
                 <LazyLoadImage
                   // placeholderSrc={placeholder}
-                  // effect="blur"
+                  effect="blur"
                   src={imagepath + movie.backdrop_path}
                   className="w-full h-full object-cover min-h-[300px] aspect-[7/4]"
                   alt="background image"

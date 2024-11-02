@@ -53,7 +53,7 @@ const MovieCard = ({ movie }: MovieCardProps) => {
                 src={imagepath + movie.poster_path}
                 alt=""
                 effect="blur"
-                placeholderSrc={placeholder}
+                // placeholderSrc={placeholder}
                 className="aspect-[3/4]"
               />
               <div className="absolute -bottom-6 w-full h-28 _carouselGradient"></div>

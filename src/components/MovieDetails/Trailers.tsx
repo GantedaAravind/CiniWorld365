@@ -3,6 +3,7 @@ import YouTube from "react-youtube";
 import { toast } from "react-hot-toast";
 import axios from "axios";
 import { motion } from "framer-motion";
+import axiosInstance from "../../config/axiosInstance";
 
 const Trailers = ({ movieId }: { movieId: string }) => {
   const [trailer, setTrailers] = useState<{ key: string; name: string }[]>([]);
@@ -14,18 +15,8 @@ const Trailers = ({ movieId }: { movieId: string }) => {
 
   const fectchTrailers = async () => {
     try {
-      const options = {
-        // method: "GET",
-        headers: {
-          // accept: "application/json",
-          Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNmQyMjg5YjY2ZDg0ZWQzNTkwZGZmZWI4MDNiMTk3OSIsIm5iZiI6MTcyNTg5OTk0NC4yMTEzNDMsInN1YiI6IjY2ZGQ5NWJjMDE2NzllNDJjMDlhOWQzZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.q9d5TeT0LSD-0C00M2jEfZY4visi4_sC7DIGd3PPsWY",
-        },
-      };
-
-      const response = await axios.get(
-        `https://api.themoviedb.org/3/movie/${movieId}/videos?language=en-US`,
-        options
+      const response = await axiosInstance.get(
+        `/${movieId}/videos?language=en-US`
       );
       const data = response.data;
       const trailerObj = data.results.filter(
