@@ -8,7 +8,6 @@ import { toast } from "react-hot-toast";
 // import placeholder from"../../assets/placeholder.svg";
 
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import axios from "axios";
 import axiosInstance from "../../config/axiosInstance";
 
 function Details() {

@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import YouTube from "react-youtube";
 import { toast } from "react-hot-toast";
-import axios from "axios";
 import { motion } from "framer-motion";
 import axiosInstance from "../../config/axiosInstance";
 

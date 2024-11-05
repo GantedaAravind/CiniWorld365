@@ -5,7 +5,6 @@ import HomeCarousel from "./HomeCarousel";
 import HomeCarouselList from "./HomeCarouselList";
 import HomeCarouselSkeleton from "../Skeleton/HomeCarouselSkeleton";
 import { toast } from "react-hot-toast";
-import axios from "axios";
 import axiosInstance from "../../config/axiosInstance";
 const HomeSlider = () => {
   const [carouselMovies, setCarouselMovies] = useState<CarouselMovieType[]>([]);

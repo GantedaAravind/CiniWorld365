@@ -4,7 +4,6 @@ import MovieList from "../../components/Home/MovieList";
 // import LoadMoreButton from "../../components/Button/LoadMoreButton";
 import { toast } from "react-hot-toast";
 import { LuLoader2 } from "react-icons/lu";
-import axios from "axios";
 import axiosInstance from "../../config/axiosInstance";
 
 // import { baseApi } from '../../api/axiosInstance'

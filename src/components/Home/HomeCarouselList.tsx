@@ -26,6 +26,7 @@ const HomeCarouselList = ({ next, carouselMovies }: HomeCarouselListProps) => {
                   carouselMovies={carouselMovies}
                   item={item}
                   idx={idx}
+                  key = {idx}
                 />
               );
             })

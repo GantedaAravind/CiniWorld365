@@ -4,7 +4,6 @@ import MovieList from "../Home/MovieList";
 
 import { toast } from "react-hot-toast";
 import { LuLoader2 } from "react-icons/lu";
-import axios from "axios";
 import axiosInstance from "../../config/axiosInstance";
 
 const SimalerMovies = ({ movieId }: { movieId: string }) => {

@@ -3,7 +3,6 @@ import { imagepath, MovieCardType } from "../../utils/constants";
 import { Link } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
-import placeholder from "../../assets/placeholder.svg";
 import { motion } from "framer-motion";
 
 interface MovieCardProps {

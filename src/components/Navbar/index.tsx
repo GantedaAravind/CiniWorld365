@@ -4,7 +4,6 @@ import { CarouselMovieType } from "../../utils/constants";
 import CarouselMiniCard from "../Home/CarouselMiniCard";
 import { IoClose } from "react-icons/io5";
 import axios from "axios";
-import axiosInstance from "../../config/axiosInstance";
 const Navbar = () => {
   const [search, setSearch] = useState<string>("");
   const [searchList, setSearchList] = useState<CarouselMovieType[]>([]);
@@ -15,8 +14,14 @@ const Navbar = () => {
 
   const featchSearch = async () => {
     try {
-      
-      const response = await axiosInstance.get(`?query=${search}&include_adult=false&language=en-US&page=1`);
+      const response = await axios.get(
+        `https://api.themoviedb.org/3/search/movie?query=${search}&include_adult=false&language=en-US&page=1`,
+        {
+          headers: {
+            Authorization: import.meta.env.VITE_AUTHORIZATION,
+          },
+        }
+      );
       const data = response.data;
       setSearchList(data.results);
     } catch (err) {
@@ -25,11 +30,9 @@ const Navbar = () => {
   };
 
   useEffect(() => {
+    if (search.length > 0) setShowSearch(true);
+    else setShowSearch(false);
     const t = setTimeout(() => {
-      if (search.length > 0) setShowSearch(true);
-      else setShowSearch(false);
-      // console.log("called");
-
       featchSearch();
     }, 300);
     return () => {
