@@ -55,8 +55,7 @@ const Navbar = () => {
         <div className="flex flex-row items-center lg:space-x-16 sm:space-x-8 scale-x-1">
           <Link to="/">
             <div className="flex flex-col text-cyan-500 sm:scale-100 scale-[70%]">
-              <h1 className="text-[18px] leading-4 ">ALLABOUT</h1>
-              <h1 className="text-[24px] leading-4 font-semibold ">MOVIES</h1>
+              <h1 className="text-2xl  font-semibold">CineWorld</h1>
             </div>
           </Link>
 

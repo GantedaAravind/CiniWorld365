@@ -16,21 +16,21 @@ const MovieCard = ({ movie }: MovieCardProps) => {
     <motion.div
       initial={{
         opacity: 0,
-        x: -50,
+        y: +50,
       }}
       whileInView={{
         opacity: 1,
-        x: 0,
+        y: 0,
       }}
       transition={{
-        duration: 1,
-        ease: "easeIn",
+        duration: 1.5,
+        type:"spring"
       }}
       exit={{
         opacity: 0,
-        x: -50,
+        y: 50,
       }}
-      viewport={{ once: false, amount: 0.2 }}
+      viewport={{ once: false, amount: 0.1}}
     >
       <Link to={`/details/${movie.id}`}>
         <div
