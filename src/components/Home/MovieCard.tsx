@@ -44,7 +44,7 @@ const MovieCard = ({ movie }: MovieCardProps) => {
         >
           <div
             className={`my-3 rounded-lg overflow-hidden  border-2 border-zinc-800 ${
-              movie.id === hover ? "scale-[102%] " : ""
+              movie.id === hover ? "scale-[102%] border-aqua-500" : ""
             } duration-200`}
           >
             <div className="relative overflow-hidden">
