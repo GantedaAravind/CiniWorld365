@@ -68,10 +68,10 @@ Explore the project here: [CiniWorld365](https://cineworld365.web.app/)
 4. **Run the application:**
 
    ```bash
-   npm start
+   npm run dev
 ````
 
-5. The app will be accessible at `http://localhost:3000`.
+5. The app will be accessible at `http://localhost:5173`.
 
 ---
 
