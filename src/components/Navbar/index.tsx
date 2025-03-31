@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect, useState, KeyboardEvent , useRef} from "react";
+import { ChangeEvent, useEffect, useState, KeyboardEvent, useRef } from "react";
 import { Link } from "react-router-dom";
 import { CarouselMovieType } from "../../utils/constants";
 import CarouselMiniCard from "../Home/CarouselMiniCard";
@@ -10,18 +10,16 @@ const Navbar = () => {
   const [showSearch, setShowSearch] = useState<boolean>(true);
   const searchCache = useRef<{ [key: string]: CarouselMovieType[] }>({});
 
-
   const handleSearchChange = (event: ChangeEvent<HTMLInputElement>) => {
     setSearch(event.target.value);
   };
 
-
   const fetchSearch = async () => {
-    if (searchCache.current[search]) { 
-      setSearchList(searchCache.current[search]); 
-      return; 
+    if (searchCache.current[search]) {
+      setSearchList(searchCache.current[search]);
+      return;
     }
-    
+
     try {
       const response = await axios.get(
         `https://api.themoviedb.org/3/search/movie?query=${search}&include_adult=false&language=en-US&page=1`,
@@ -35,12 +33,10 @@ const Navbar = () => {
       const data = response.data;
       setSearchList(data.results);
       searchCache.current[search] = data.results;
-
     } catch (err) {
       console.log("fetch error in search...", err);
     }
   };
-
 
   useEffect(() => {
     if (search.length > 0) setShowSearch(true);
@@ -52,7 +48,6 @@ const Navbar = () => {
       clearTimeout(t);
     };
   }, [search]);
-
 
   const toggleShow = (bool: boolean) => {
     setShowSearch(bool);

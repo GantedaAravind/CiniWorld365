@@ -7,7 +7,6 @@ import DetailsSkeleton from "../../components/Skeleton/DetailsSkeleton";
 import { toast } from "react-hot-toast";
 // import placeholder from"../../assets/placeholder.svg";
 
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import axiosInstance from "../../config/axiosInstance";
 
 function Details() {
@@ -16,7 +15,6 @@ function Details() {
 
   const fetchDetails = async () => {
     try {
-      
       const res = await axiosInstance.get(`/${params.id}?language=en-US`);
       const data = res.data;
       //   console.log(data);
@@ -35,9 +33,8 @@ function Details() {
       {details && params?.id ? (
         <div className="relative h-fit w-full">
           <div className="relative ">
-            <LazyLoadImage
-              // // effect="blur"
-              // placeholderSrc={placeholder}
+            <img
+              loading="lazy"
               className="opacity-40 w-full aspect-[7/4] object-center min-h-[500px]"
               alt="background"
               src={imagepath + details?.backdrop_path}
@@ -47,9 +44,8 @@ function Details() {
           <div className="absolute top-0 pb-[100px] w-full">
             <div className="lg:mt-[500px] md:mt-[400px] mt-[200px] mx-auto w-[90%]">
               <div className="md:flex gap-8">
-                <LazyLoadImage
-                  // effect="blur"
-                  // placeholderSrc={placeholder}
+                <img
+                  loading="lazy"
                   src={imagepath + details?.poster_path}
                   alt="poster"
                   className="lg:w-[350px] md:w-[280px] sm:w-[250px] w-[200px] h-fit aspect-[3/4] md:rounded-lg rounded-md "

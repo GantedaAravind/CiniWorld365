@@ -1,7 +1,6 @@
 import { FaRegThumbsUp } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { imagepath, CarouselMovieType } from "../../utils/constants";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
 // import placeholder from "../../assets/placeholder600_400.svg";
 
@@ -21,9 +20,8 @@ const HomeCarousel = ({ carouselMovies }: HomeCarouselProps) => {
               }
             >
               <div className="relative h-full">
-                <LazyLoadImage
-                  // placeholderSrc={placeholder}
-                  effect="blur"
+                <img
+                  loading="lazy"
                   src={imagepath + movie.backdrop_path}
                   className="w-full h-full object-cover min-h-[300px] aspect-[7/4]"
                   alt="background image"
@@ -34,7 +32,8 @@ const HomeCarousel = ({ carouselMovies }: HomeCarouselProps) => {
                 <div className="absolute bottom-0 h-24 bg-blue-300 w-full _carouselGradient "></div>
               </div>
               <div className="absolute bottom-0 items-end md:flex px-4 gap-4">
-                <LazyLoadImage
+                <img
+                  loading="lazy"
                   src={imagepath + movie.poster_path}
                   className="md:w-[160px] w-[120px] aspect-[4/5] "
                   alt="Poster image"

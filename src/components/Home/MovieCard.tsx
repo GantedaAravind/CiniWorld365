@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { imagepath, MovieCardType } from "../../utils/constants";
 import { Link } from "react-router-dom";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import "react-lazy-load-image-component/src/effects/blur.css";
 import { motion } from "framer-motion";
 
 interface MovieCardProps {
@@ -24,13 +22,13 @@ const MovieCard = ({ movie }: MovieCardProps) => {
       }}
       transition={{
         duration: 1.5,
-        type:"spring"
+        type: "spring",
       }}
       exit={{
         opacity: 0,
         y: 50,
       }}
-      viewport={{ once: false, amount: 0.1}}
+      viewport={{ once: false, amount: 0.1 }}
     >
       <Link to={`/details/${movie.id}`}>
         <div
@@ -48,10 +46,10 @@ const MovieCard = ({ movie }: MovieCardProps) => {
             } duration-200`}
           >
             <div className="relative overflow-hidden">
-              <LazyLoadImage
+              <img
+                loading="lazy"
                 src={imagepath + movie.poster_path}
                 alt=""
-                effect="blur"
                 // placeholderSrc={placeholder}
                 className="aspect-[3/4]"
               />

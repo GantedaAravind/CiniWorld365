@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 
 // Create an Axios instance
 const axiosInstance = axios.create({
@@ -7,6 +7,7 @@ const axiosInstance = axios.create({
     accept: "application/json",
     Authorization: import.meta.env.VITE_AUTHORIZATION,
   },
+  timeout: 15000,
   method: "GET", // Default method can be set here, if desired
 });
 

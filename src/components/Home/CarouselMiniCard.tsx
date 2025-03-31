@@ -3,7 +3,6 @@ import { CarouselMovieType } from "../../utils/constants";
 import { imagepath } from "../../utils/constants";
 import { FaRegThumbsUp } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 interface CarouselMiniCardProps {
   carouselMovies: CarouselMovieType[];
   item: number;
@@ -28,7 +27,8 @@ const CarouselMiniCard = ({
           setHover(null);
         }}
       >
-        <LazyLoadImage
+        <img
+          loading="lazy"
           src={imagepath + carouselMovies[item]?.poster_path}
           className="w-[80px] aspect-[4/6] m-2 rounded-md"
           alt="image does not support"
