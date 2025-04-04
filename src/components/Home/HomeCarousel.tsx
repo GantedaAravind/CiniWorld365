@@ -21,7 +21,6 @@ const HomeCarousel = ({ carouselMovies }: HomeCarouselProps) => {
             >
               <div className="relative h-full">
                 <img
-                  loading="lazy"
                   src={imagepath + movie.backdrop_path}
                   className="w-full h-full object-cover min-h-[300px] aspect-[7/4]"
                   alt="background image"
@@ -33,7 +32,6 @@ const HomeCarousel = ({ carouselMovies }: HomeCarouselProps) => {
               </div>
               <div className="absolute bottom-0 items-end md:flex px-4 gap-4">
                 <img
-                  loading="lazy"
                   src={imagepath + movie.poster_path}
                   className="md:w-[160px] w-[120px] aspect-[4/5] "
                   alt="Poster image"

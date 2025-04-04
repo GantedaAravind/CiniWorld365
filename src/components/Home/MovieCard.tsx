@@ -47,7 +47,6 @@ const MovieCard = ({ movie }: MovieCardProps) => {
           >
             <div className="relative overflow-hidden">
               <img
-                loading="lazy"
                 src={imagepath + movie.poster_path}
                 alt=""
                 // placeholderSrc={placeholder}

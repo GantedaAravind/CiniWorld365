@@ -34,7 +34,6 @@ function Details() {
         <div className="relative h-fit w-full">
           <div className="relative ">
             <img
-              loading="lazy"
               className="opacity-40 w-full aspect-[7/4] object-center min-h-[500px]"
               alt="background"
               src={imagepath + details?.backdrop_path}
@@ -45,7 +44,6 @@ function Details() {
             <div className="lg:mt-[500px] md:mt-[400px] mt-[200px] mx-auto w-[90%]">
               <div className="md:flex gap-8">
                 <img
-                  loading="lazy"
                   src={imagepath + details?.poster_path}
                   alt="poster"
                   className="lg:w-[350px] md:w-[280px] sm:w-[250px] w-[200px] h-fit aspect-[3/4] md:rounded-lg rounded-md "

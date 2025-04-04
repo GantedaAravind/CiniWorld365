@@ -28,7 +28,6 @@ const CarouselMiniCard = ({
         }}
       >
         <img
-          loading="lazy"
           src={imagepath + carouselMovies[item]?.poster_path}
           className="w-[80px] aspect-[4/6] m-2 rounded-md"
           alt="image does not support"
